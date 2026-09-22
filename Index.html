@@ -17,10 +17,17 @@
     }
     .container {
       text-align: center;
-      padding: 20px;
+      padding: 30px;
       background: #ffffff;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 500px;
+    }
+    /* Customizing the Dialogflow Messenger primary color to Dell Blue */
+    df-messenger {
+      --df-messenger-button-titlebar-color: #0076CE;
+      --df-messenger-send-icon: #0076CE;
+      --df-messenger-chat-window-height: 550px;
     }
   </style>
 </head>
@@ -31,9 +38,14 @@
     <p>Click the chat icon in the bottom right corner to start finding your ideal laptop!</p>
   </div>
 
-  <!-- PASTE YOUR DIALOGFLOW MESSENGER CODE BELOW THIS LINE -->
+  <!-- DIALOGFLOW MESSENGER INTEGRATION -->
   <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-<iframe height="430" width="350" src="https://bot.dialogflow.com/b45c5df5-7487-423a-b9fb-367772c1ef29"></iframe>
+  <df-messenger
+    intent="WELCOME"
+    chat-title="Dell-Laptop-Advisor"
+    agent-id="b45c5df5-7487-423a-b9fb-367772c1ef29"
+    language-code="en"
+  ></df-messenger>
 
 </body>
 </html>
